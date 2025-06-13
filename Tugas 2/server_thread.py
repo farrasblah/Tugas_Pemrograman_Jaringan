@@ -10,7 +10,7 @@ def process_string(request_string):
     balas = "OK\r\n"
     if (request_string.startswith("TIME") and request_string.endswith("\n")):
         now = datetime.now()
-        waktu = now.strftime("%d %m %Y %H:%M:%S")
+        waktu = now.strftime("JAM %H:%M:%S")
         balas = f"{waktu}\r\n"
     if (request_string.startswith("QUIT") and request_string.endswith("\n")):
         balas = "XXX"
@@ -46,7 +46,7 @@ class Server(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		self.my_socket.bind(('0.0.0.0',50000))
+		self.my_socket.bind(('0.0.0.0',45000))
 		self.my_socket.listen(1)
 		while True:
 			self.connection, self.client_address = self.my_socket.accept()

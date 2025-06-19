@@ -6,7 +6,8 @@ import ssl
 import os
 import base64
 
-server_address = ('172.16.16.101', 8885)
+server_address = ('172.16.16.101', 8885) #ubah port sesuai mau pakaiproses pool atau thread pool
+
 
 def make_socket(destination_address='172.16.16.101', port=24):
     try:
